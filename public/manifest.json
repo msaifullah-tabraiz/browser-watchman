@@ -1,0 +1,22 @@
+{
+  "manifest_version": 3,
+  "name": "Browser Watchman",
+  "description": "An extension that records your history.",
+  "version": "1.0.0",
+  "background": {
+    "service_worker": "serviceWorker.js",
+    "type": "module"
+  },
+  "action": {
+    "default_popup": "index.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["contentScript.js"]
+    }
+  ],
+  "permissions": ["nativeMessaging", "storage", "tabs"],
+  "host_permissions": ["https://*/*", "http://*/*"],
+  "options_page": "index.html"
+}

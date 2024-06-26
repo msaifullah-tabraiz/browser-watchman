@@ -1,0 +1,66 @@
+// Import all of Bootstrap's CSS
+@import "bootstrap/scss/bootstrap";
+
+/* custom */
+
+.img-logo {
+    width: 100%;
+    max-height: 80px;
+}
+
+.website-favicon {
+    width: 32px;
+    height: 32px;
+    max-height: 40px;
+}
+
+.loader {
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid #4A92E2;
+  width: 120px;
+  height: 120px;
+  -webkit-animation: spin 2s linear infinite; /* Safari */
+  animation: spin 2s linear infinite;
+}
+
+/* Safari */
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+// .website-progress-bar-wrapper {
+//     border-radius: 10px;
+//     border: 1px solid red;
+//     overflow: hidden;
+// }
+
+// .website-progress {
+//     height: 10px;
+//     border-radius: 0;
+//     background-color: #fff;
+// }
+
+.website-progress .progress-bar {    
+    background-color: #4A92E2;
+}
+
+/* transitions */
+.slide-up-enter-active,
+.slide-up-leave-active {
+  transition: all 0.5s ease-out;
+}
+.slide-up-enter-from {
+  opacity: 0;
+  transform: translateY(30px);
+}
+.slide-up-leave-to {
+  opacity: 0;
+  transform: translateY(-30px);
+}
