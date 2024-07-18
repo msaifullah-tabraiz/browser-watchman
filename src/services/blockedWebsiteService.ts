@@ -13,7 +13,7 @@ const index = () => {
   });
 };
 
-const store = async (formBody: any) => {
+const store = async (formBodyHostname: string) => {
   // blockedWebsite: BlockedWebsite;
   const blockedWebsites: any = await index();
   console.log("blockedWebsite = ");
@@ -23,23 +23,25 @@ const store = async (formBody: any) => {
   );
   console.log("blockedWebsitesHostnames = ", blockedWebsitesHostnames);
 
-  const blockedWebsiteInputArray = formBody.blocked_websites.split("\n");
-  console.log("blockedWebsiteInputArray = ", blockedWebsiteInputArray);
+  // const blockedWebsiteInputArray = formBody.blocked_websites.split("\n");
+  // console.log("blockedWebsiteInputArray = ", blockedWebsiteInputArray);
 
-  blockedWebsiteInputArray.forEach((blockedWebsiteInput: any) => {
-    console.log();
+  // blockedWebsiteInputArray.forEach((blockedWebsiteInput: any) => {
+  //   console.log();
 
-    if (!blockedWebsitesHostnames.includes(blockedWebsiteInput)) {
-      console.log("blockedWebsiteInput = ", blockedWebsiteInput);
+  // });
+  let data = null;
 
-      blockedWebsites.push({
-        hostname: blockedWebsiteInput,
-      });
-    }
-  });
+  if (!blockedWebsitesHostnames.includes(formBodyHostname)) {
+    blockedWebsites.push({
+      hostname: formBodyHostname,
+    });
+    data = formBodyHostname;
+  }
 
   const blockedWebsitesString = JSON.stringify(blockedWebsites);
-  chrome.storage.sync.set({ blocked_websites: blockedWebsitesString });
+  await chrome.storage.sync.set({ blocked_websites: blockedWebsitesString });
+  return { data };
 };
 
 const reset = () => {

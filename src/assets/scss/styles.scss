@@ -51,6 +51,31 @@
     background-color: #4A92E2;
 }
 
+.badge-add-block-website {
+  cursor: pointer;
+}
+
+.img-add-block-website {
+  width: 16px;
+  height: 16px;
+}
+
+.input-add-block-website {
+  border-radius: 50rem;
+  border: 1px solid #4A92E2;
+}
+
+.btn-add-block-website {
+  border-radius: 50rem;
+  background-color: #4A92E2;
+  color: #ffffff;
+}
+
+.badge-block-website {
+  background-color: #660000;
+  color: #ffffff
+}
+
 /* transitions */
 .slide-up-enter-active,
 .slide-up-leave-active {
@@ -63,4 +88,15 @@
 .slide-up-leave-to {
   opacity: 0;
   transform: translateY(-30px);
+}
+
+/* theme */
+.text-bg-theme {
+  background-color: #4A92E2;
+  color: #ffffff
+}
+
+.btn-close-wrapper {
+  background-color: #bbb;
+  opacity: 0.5;
 }

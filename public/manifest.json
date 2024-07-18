@@ -10,13 +10,8 @@
   "action": {
     "default_popup": "index.html"
   },
-  "content_scripts": [
-    {
-      "matches": ["<all_urls>"],
-      "js": ["contentScript.js"]
-    }
-  ],
-  "permissions": ["nativeMessaging", "storage", "tabs"],
-  "host_permissions": ["https://*/*", "http://*/*"],
+
+  "permissions": ["activeTab", "storage", "tabs"],
+
   "options_page": "index.html"
 }
